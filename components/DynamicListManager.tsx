@@ -68,7 +68,7 @@ const DynamicListManager = <T extends { id: string }>({
         }
         if ('nom' in item) {
             // Pour Compétences ou Langues
-            return item.nom || 'Nouvelle entrée';
+            return (item as { nom: string }).nom || 'Nouvelle entrée';
         }
         return 'Élément';
     };
